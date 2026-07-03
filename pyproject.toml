@@ -1,0 +1,109 @@
+[build-system]
+requires = ["hatchling>=1.26.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fuhrer-backend"
+version = "0.1.0"
+description = "Fuhrer Local AI Assistant"
+readme = "README.md"
+requires-python = ">=3.13"
+license = { text = "MIT" }
+
+authors = [
+    { name = "Fuhrer Team" }
+]
+
+dependencies = [
+
+    "fastapi>=0.116.0",
+    "uvicorn[standard]>=0.35.0",
+
+    "pydantic>=2.11.0",
+    "pydantic-settings>=2.10.0",
+
+    "sqlalchemy>=2.0.43",
+
+    "alembic>=1.16.4",
+
+    "loguru>=0.7.3",
+
+    "httpx>=0.28.1",
+
+    "orjson>=3.11.2",
+
+    "python-dotenv>=1.1.1",
+
+    "argon2-cffi>=25.1.0",
+
+    "pyjwt>=2.10.1",
+
+    "cryptography>=45.0.6",
+
+    "redis>=6.2.0",
+
+    "cachetools>=6.2.0",
+
+    "psutil>=7.0.0"
+]
+
+[project.optional-dependencies]
+
+dev = [
+
+    "pytest",
+
+    "pytest-asyncio",
+
+    "pytest-cov",
+
+    "ruff",
+
+    "black",
+
+    "mypy",
+
+    "pre-commit"
+]
+
+[tool.black]
+
+line-length = 100
+
+target-version = ["py313"]
+
+[tool.ruff]
+
+line-length = 100
+
+target-version = "py313"
+
+[tool.ruff.lint]
+
+select = [
+
+"E",
+
+"F",
+
+"W",
+
+"I",
+
+"N",
+
+"B",
+
+"UP"
+
+]
+
+[tool.pytest.ini_options]
+
+asyncio_mode = "auto"
+
+testpaths = [
+
+"backend/tests"
+
+]
