@@ -1,0 +1,51 @@
+# Python
+
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environment
+
+.venv/
+venv/
+
+# IDE
+
+.idea/
+.vscode/
+
+# Logs
+
+logs/
+*.log
+
+# SQLite
+
+*.db
+*.sqlite
+
+# macOS
+
+.DS_Store
+
+# Xcode
+
+DerivedData/
+
+# Testing
+
+.pytest_cache/
+
+.coverage
+
+# Secrets
+
+.env
+
+# Ruff
+
+.ruff_cache/
+
+# Mypy
+
+.mypy_cache/
