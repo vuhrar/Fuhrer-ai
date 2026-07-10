@@ -1,10 +1,8 @@
-from argon2 import PasswordHasher
-from argon2.exceptions import VerifyMismatchError
-
+from hashlib import sha256
 from secrets import token_urlsafe
 
-from hashlib import sha256
-
+from argon2 import PasswordHasher
+from argon2.exceptions import VerifyMismatchError
 
 _password_hasher = PasswordHasher()
 

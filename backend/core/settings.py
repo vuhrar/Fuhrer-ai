@@ -18,15 +18,11 @@ class Settings(BaseSettings):
     host: str = "0.0.0.0"
     port: int = 8000
 
-    database_url: str = Field(
-        default="sqlite:///./fuhrer.db"
-    )
+    database_url: str = Field(default="sqlite:///./fuhrer.db")
 
-    redis_url: str = Field(
-        default="redis://localhost:6379"
-    )
+    redis_url: str = Field(default="redis://localhost:6379")
 
-    secret_key: str
+    secret_key: str = Field(default="change-me-in-development")
 
     jwt_algorithm: str = "HS256"
 

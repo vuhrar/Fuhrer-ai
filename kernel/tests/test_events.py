@@ -1,38 +1,33 @@
-import pytest
+import asyncio
 
-from kernel.events import Event
-from kernel.events import EventBus
-from kernel.events import EventHandler
+from kernel.events import Event, EventBus, EventHandler
 
 
 class DemoHandler(EventHandler):
-
     def __init__(self):
-
         self.called = False
 
     async def handle(self, event):
-
         self.called = True
 
 
-@pytest.mark.asyncio
-async def test_event_bus():
+def test_event_bus():
+    async def run_event_bus() -> None:
+        bus = EventBus()
+        handler = DemoHandler()
 
-    bus = EventBus()
-
-    handler = DemoHandler()
-
-    bus.subscribe(
-        "startup",
-        handler,
-    )
-
-    await bus.publish(
-        Event.create(
+        bus.subscribe(
             "startup",
-            {},
+            handler,
         )
-    )
 
-    assert handler.called
+        await bus.publish(
+            Event.create(
+                "startup",
+                {},
+            )
+        )
+
+        assert handler.called
+
+    asyncio.run(run_event_bus())

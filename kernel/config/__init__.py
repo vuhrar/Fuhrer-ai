@@ -2,8 +2,8 @@
 Kernel Configuration Package.
 """
 
-from .settings import Settings
 from .loader import load_settings
+from .settings import Settings
 
 __all__ = [
     "Settings",
