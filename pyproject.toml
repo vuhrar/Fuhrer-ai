@@ -66,6 +66,9 @@ dev = [
     "pre-commit"
 ]
 
+[tool.hatch.build.targets.wheel]
+packages = ["backend", "kernel"]
+
 [tool.black]
 
 line-length = 100
@@ -100,10 +103,12 @@ select = [
 
 [tool.pytest.ini_options]
 
-asyncio_mode = "auto"
+pythonpath = ["."]
 
 testpaths = [
 
-"backend/tests"
+"backend/tests",
+
+"kernel/tests"
 
 ]

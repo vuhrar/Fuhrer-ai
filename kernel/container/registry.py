@@ -16,9 +16,7 @@ class ServiceRegistry:
     ) -> None:
 
         if key in self._services:
-            raise ValueError(
-                f"Service '{key}' already exists."
-            )
+            raise ValueError(f"Service '{key}' already exists.")
 
         self._services[key] = service
 
@@ -28,9 +26,7 @@ class ServiceRegistry:
     ) -> Any:
 
         if key not in self._services:
-            raise KeyError(
-                f"Unknown service '{key}'."
-            )
+            raise KeyError(f"Unknown service '{key}'.")
 
         return self._services[key]
 

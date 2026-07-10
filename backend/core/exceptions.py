@@ -1,35 +1,38 @@
 from fastapi import HTTPException, status
 
 
-class FuhrerException(Exception):
+class FuhrerError(Exception):
     """Base application exception."""
 
 
-class ConfigurationError(FuhrerException):
+FuhrerException = FuhrerError
+
+
+class ConfigurationError(FuhrerError):
     pass
 
 
-class AuthenticationError(FuhrerException):
+class AuthenticationError(FuhrerError):
     pass
 
 
-class AuthorizationError(FuhrerException):
+class AuthorizationError(FuhrerError):
     pass
 
 
-class ValidationError(FuhrerException):
+class ValidationError(FuhrerError):
     pass
 
 
-class DatabaseError(FuhrerException):
+class DatabaseError(FuhrerError):
     pass
 
 
-class AIEngineError(FuhrerException):
+class AIEngineError(FuhrerError):
     pass
 
 
-class PluginError(FuhrerException):
+class PluginError(FuhrerError):
     pass
 
 

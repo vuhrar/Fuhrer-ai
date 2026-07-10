@@ -1,8 +1,6 @@
 from functools import lru_cache
 
-from pydantic import Field
-from pydantic_settings import BaseSettings
-from pydantic_settings import SettingsConfigDict
+from pydantic_settings import BaseSettings, SettingsConfigDict
 
 from .environment import Environment
 
@@ -27,11 +25,11 @@ class Settings(BaseSettings):
 
     port: int = 8000
 
-    database_url: str
+    database_url: str = "sqlite:///./fuhrer.db"
 
-    redis_url: str
+    redis_url: str = "redis://localhost:6379"
 
-    secret_key: str
+    secret_key: str = "change-me-in-development"
 
     jwt_algorithm: str = "HS256"
 

@@ -19,9 +19,7 @@ class EventBus:
         handler: EventHandler,
     ) -> None:
 
-        self._handlers[event_name].append(
-            handler
-        )
+        self._handlers[event_name].append(handler)
 
     async def publish(
         self,
